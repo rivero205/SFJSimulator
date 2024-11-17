@@ -2,7 +2,7 @@
 
 # Simulador SJF (Shortest Job First)
 
-Un simulador gráfico del algoritmo de planificación SJF desarrollado en Java, que te permite visualizar cómo funciona la planificación de procesos por tiempo más corto primero.
+El Simulador SJF (Shortest Job First) es una herramienta interactiva diseñada para comprender y visualizar el funcionamiento del algoritmo de planificación de procesos SJF. Este algoritmo se utiliza en sistemas operativos para optimizar la ejecución de procesos seleccionando siempre aquel con el menor tiempo de ráfaga disponible, reduciendo así el tiempo de espera promedio y mejorando la eficiencia global del sistema.
 
 ## 🚀 Características Principales
 
