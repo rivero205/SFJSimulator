@@ -94,6 +94,7 @@ public class SimulatorSFJ extends javax.swing.JPanel {
         btnAñadir = new javax.swing.JButton();
         labelTime = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -177,6 +178,14 @@ public class SimulatorSFJ extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         jLabel1.setText("copyright © Maicol Vivero all rights reserveds ");
 
+        btnEliminar.setBackground(new java.awt.Color(255, 0, 0));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/so2/borrar (2).png"))); // NOI18N
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -186,21 +195,28 @@ public class SimulatorSFJ extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(105, 105, 105)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnDiagrama, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(138, 138, 138))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelTime))
+                                .addContainerGap(132, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtRafaga, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(labelTime))
-                        .addContainerGap(132, Short.MAX_VALUE))
+                                .addComponent(btnAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(131, 131, 131))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(21, 21, 21))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(21, 21, 21))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnDiagrama, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(280, 280, 280))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,14 +225,15 @@ public class SimulatorSFJ extends javax.swing.JPanel {
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAñadir)
-                    .addComponent(txtRafaga, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRafaga, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelTime)
-                .addGap(25, 25, 25)
-                .addComponent(btnDiagrama, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(btnDiagrama)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
                 .addGap(15, 15, 15))
         );
@@ -241,34 +258,108 @@ public class SimulatorSFJ extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRafagaActionPerformed
 
-    private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        try {
-            // Obtener el tiempo de ráfaga ingresado
-            String rafagaText = txtRafaga.getText().trim();
-            int tiempoRafaga = Integer.parseInt(rafagaText);
-
-            // Añadir proceso con nombre automático (P1, P2, ...)
-            String proceso = "P" + processCounter++;
-
-            // Crear objeto para el proceso (nombre + tiempo ráfaga)
-            Proceso nuevoProceso = new Proceso(proceso, tiempoRafaga);
-            listaProcesos.add(nuevoProceso);  // Agregar proceso a la lista
-
-            // Limpiar el campo de texto
-            txtRafaga.setText("");
-
-            // Ordenar la lista de procesos internamente por tiempo de ráfaga
-            ordenarProcesos();
-
-            // Actualizar la tabla con los procesos ordenados
-            actualizarTabla();
-
-            // Calcular el tiempo promedio de espera
-            calcularTiempoPromedio();
-        } catch (NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Por favor ingrese un número válido.");
+    private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {
+        // Obtener el texto ingresado y eliminar espacios
+        String rafagaText = txtRafaga.getText().trim();
+        
+        // Validar que no esté vacío
+        if (rafagaText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, 
+                "Por favor ingrese un tiempo de ráfaga", 
+                "Campo Vacío", 
+                JOptionPane.WARNING_MESSAGE);
+            return;
         }
-    }//GEN-LAST:event_btnAñadirActionPerformed
+        
+        // Validar que no contenga letras
+        if (rafagaText.matches(".*[a-zA-Z].*")) {
+            JOptionPane.showMessageDialog(this, 
+                "No se permiten letras en el tiempo de ráfaga", 
+                "Error - Letras Detectadas", 
+                JOptionPane.ERROR_MESSAGE);
+            txtRafaga.setText("");
+            return;
+        }
+        
+        // Validar que no contenga decimales
+        if (rafagaText.contains(".") || rafagaText.contains(",")) {
+            JOptionPane.showMessageDialog(this, 
+                "No se permiten números decimales en el tiempo de ráfaga", 
+                "Error - Decimal Detectado", 
+                JOptionPane.ERROR_MESSAGE);
+            txtRafaga.setText("");
+            return;
+        }
+        
+        // Validar que no contenga caracteres especiales
+        if (!rafagaText.matches("^[0-9]+$")) {
+            JOptionPane.showMessageDialog(this, 
+                "No se permiten caracteres especiales en el tiempo de ráfaga", 
+                "Error - Caracteres Especiales", 
+                JOptionPane.ERROR_MESSAGE);
+            txtRafaga.setText("");
+            return;
+        }
+        
+        try {
+            int tiempoRafaga = Integer.parseInt(rafagaText);
+            
+            // Validar rango del número
+            if (tiempoRafaga <= 0) {
+                JOptionPane.showMessageDialog(this, 
+                    "El tiempo de ráfaga debe ser mayor que 0", 
+                    "Error - Valor Inválido", 
+                    JOptionPane.ERROR_MESSAGE);
+                txtRafaga.setText("");
+                return;
+            }
+            
+            if (tiempoRafaga > 100) {
+                JOptionPane.showMessageDialog(this, 
+                    "El tiempo de ráfaga no puede ser mayor a 100", 
+                    "Error - Valor Muy Alto", 
+                    JOptionPane.WARNING_MESSAGE);
+                txtRafaga.setText("");
+                return;
+            }
+
+            // Crear y añadir el proceso
+            String proceso = "P" + processCounter++;
+            Proceso nuevoProceso = new Proceso(proceso, tiempoRafaga);
+            listaProcesos.add(nuevoProceso);
+
+            txtRafaga.setText("");
+            ordenarProcesos();
+            actualizarTabla();
+            calcularTiempoPromedio();
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, 
+                "Error al procesar el número ingresado", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+            txtRafaga.setText("");
+        }
+    }
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+
+    if(listaProcesos.isEmpty()){
+        JOptionPane.showMessageDialog(this, "No hay procesos para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        // Eliminar todos los procesos de la lista
+        listaProcesos.clear();
+        
+        // Actualizar la tabla para reflejar que está vacía
+        actualizarTabla();
+        
+        // Reiniciar el contador de procesos
+        processCounter = 1;
+        
+        // Actualizar el tiempo promedio (será 0 al no haber procesos)
+        calcularTiempoPromedio();
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnDiagramaActionPerformed(java.awt.event.ActionEvent evt) {
         if (listaProcesos.isEmpty()) {
@@ -298,6 +389,7 @@ public class SimulatorSFJ extends javax.swing.JPanel {
     private javax.swing.JTable TableProcesos;
     private javax.swing.JButton btnAñadir;
     private javax.swing.JButton btnDiagrama;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
